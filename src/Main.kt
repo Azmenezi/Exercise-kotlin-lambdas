@@ -2,7 +2,7 @@ fun main() {
     greetSeaCreatures()
     println(findPearl(6))
     println(divideTreasure(1000.0, 5))
-    println(calculateDepth(1500,800))
+    println(calculateDepth(1500,800,depthCalculator))
 }
 
 val greetSeaCreatures = {
@@ -13,4 +13,8 @@ val findPearl = { numberOfPearls: Int -> numberOfPearls * numberOfPearls}
 
 val divideTreasure = {  totalTreasuresKWD: Double, numberOfExplorers: Int -> totalTreasuresKWD / numberOfExplorers}
 
-val calculateDepth: (Int, Int) -> Int = { location1,location2 -> location1 - location2 }
+val depthCalculator: (Int, Int) -> Int = { location1,location2 -> location1 - location2 }
+
+fun calculateDepth(location1: Int,location2: Int, depthCalculator: (Int,Int)->Int): Int{
+    return depthCalculator(location1,location2)
+}
