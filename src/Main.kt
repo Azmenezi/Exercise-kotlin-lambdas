@@ -3,10 +3,11 @@ fun main() {
     println(findPearl(6))
     println(divideTreasure(1000.0, 5))
     println(calculateDepth(1500,800,depthCalculator))
+
 }
 
 val greetSeaCreatures = {
-    println("hello, deep sea")
+    println(loud("hello, deep sea"))
 }
 
 val findPearl = { numberOfPearls: Int -> numberOfPearls * numberOfPearls}
@@ -18,3 +19,10 @@ val depthCalculator: (Int, Int) -> Int = { location1,location2 -> location1 - lo
 fun calculateDepth(location1: Int,location2: Int, depthCalculator: (Int,Int)->Int): Int{
     return depthCalculator(location1,location2)
 }
+
+val loud: (String)->String = { text -> text.uppercase() }
+
+fun String.loud(): String {
+    return this.uppercase() + "!"
+}
+
